@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[1354px] mx-auto flex flex-col md:flex-row items-center justify-center gap-4 my-30">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-4 my-30 mx-5 xl:mx-20">
     <div
     v-for="(card, index) in cardContent"
     :key="index"

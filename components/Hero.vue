@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center py-[80px] overflow-hidden 2xl:overflow-visible">
+  <div class="flex flex-col items-center justify-center py-[80px] overflow-hidden 3xl:overflow-visible">
     <div class="relative max-w-[1352px] mx-20 text-center">
       <div class="max-w-4xl mx-auto">
         <Heading variant="h1" class="mb-8">

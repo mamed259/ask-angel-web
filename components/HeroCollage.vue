@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center gap-x-48 py-40 overflow-hidden 2xl:overflow-visible relative left-0 2xl:left-0">
+  <div class="flex items-center justify-center gap-x-48 py-40 overflow-hidden 3xl:overflow-visible relative left-0 3xl:left-0">
         <NuxtImg 
           width="327" 
           height="709" 
