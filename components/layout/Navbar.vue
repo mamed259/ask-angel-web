@@ -1,6 +1,6 @@
 <template>
-  <nav class="w-full">
-    <div class="max-w-[1352px] mx-5 xl:mx-20 py-4">
+  <nav class="w-full px-5 xl:px-20">
+    <div class="max-w-[1352px] mx-auto py-4">
       <div class="flex justify-between items-center h-16 mb-3 lg:mb-0">
         <!-- Logo -->
         <div class="flex-shrink-0">
@@ -23,7 +23,7 @@
         <div class="flex-shrink-0 ms-auto lg:ms-0 pe-5 lg:pe-0">
           <NuxtLink to="/contact">
             <button class="bg-secondary cursor-pointer font-sans font-bold uppercase text-primary border-2 border-primary lg:border-none px-8 py-3 lg:py-5 rounded-full text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-              Contact us
+              {{ $t('navbar.contact') }}
             </button>
           </NuxtLink>
         </div>
@@ -45,13 +45,33 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { navigationLinks } from './properties'
 import NavbarMobile from './NavbarMobile.vue'
 import { slugify } from '~/utils/slugify'
 
 const mobileMenuOpen = ref(false)
 
+const { t: $t } = useI18n()
 
+type NavLinks = {
+    label: string,
+    icon?: string
+    link?: string
+}
+
+const navigationLinks: NavLinks[] = [
+    {
+        label: $t('navbar.how-it-works'),
+        icon: 'flower'
+    },
+    {
+        label: $t('navbar.health'),
+        icon: 'health'
+    },
+    {
+        label: $t('navbar.couch'),
+        icon: 'sun'
+    }
+]
 
 const closeMobileMenu = () => {
     mobileMenuOpen.value = false

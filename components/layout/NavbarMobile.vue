@@ -21,13 +21,34 @@
 </template>
 
 <script setup lang="ts">
-import { navigationLinks } from './properties';
-import { ref } from 'vue';
 import { slugify } from '~/utils/slugify';
+
+type NavLinks = {
+    label: string,
+    icon?: string
+    link?: string
+}
 
 const mobileMenuOpen = defineModel('mobileMenuOpen')
 
 const emit = defineEmits(['close'])
+
+const { t: $t } = useI18n()
+
+const navigationLinks: NavLinks[] = [
+    {
+        label: $t('navbar.how-it-works'),
+        icon: 'flower'
+    },
+    {
+        label: $t('navbar.health-made-fun'),
+        icon: 'health'
+    },
+    {
+        label: $t('navbar.your-personal-couch'),
+        icon: 'sun'
+    }
+]
 
 const closeMobileMenu = () => {
     mobileMenuOpen.value = false
