@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "how-it-works": "Wie es funktioniert",
+        "health": "Gesundheit macht Spaß",
+        "couch": "Dein persönlicher Sofa",
+        "contact": "Kontaktiere uns",
+        "login": "Anmelden",
+        "register": "Registrieren"
+    },
+    "footer": {
+        "terms": "Nutzungsbedingungen",
+        "privacy": "Datenschutz"
+    }
+}

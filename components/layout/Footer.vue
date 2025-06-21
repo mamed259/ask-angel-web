@@ -2,14 +2,12 @@
   <nav class="w-full">
     <div class="max-w-[1352px] mx-auto">
       <div class="flex items-end h-16 justify-between">
-        <!-- Logo -->
         <div class="flex-shrink-0">
           <NuxtLink to="/">
             <img src="~/assets/icons/logo.svg" alt="Logo" class="h-23 w-auto" />
           </NuxtLink>
         </div>
         
-        <!-- Navigation Links -->
         <ul class="hidden md:flex justify-between">
           <li class="flex items-center justify-center mr-18 text-gray-700 hover:text-gray-900 py-2 text-sm font-sans font-light transition-colors duration-200">
               © Ask Angel {{ new Date().getFullYear() }}
@@ -39,8 +37,34 @@
 </template>
 
 <script setup lang="ts">
-import { footerLinks } from './properties'
 import { slugify } from '~/utils/slugify'
 
+const { t: $t } = useI18n()
 
+type NavLinks = {
+    label: string,
+    icon?: string
+    link?: string
+}
+
+const footerLinks: NavLinks[] = [
+    {   
+        label: $t('footer.terms'),
+    },
+    {
+        label: $t('footer.privacy'),
+    },
+    {
+        label: 'Link Goes Here', // TODO: Add link
+    },
+    {
+        label: 'Link Goes Here',
+    },
+    {
+        label: 'Link Goes Here',
+    },
+    {
+        label: 'Link Goes Here',
+    }
+]
 </script>
