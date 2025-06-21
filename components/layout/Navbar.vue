@@ -1,7 +1,7 @@
 <template>
   <nav class="w-full">
-    <div class="max-w-[1352px] mx-auto py-4">
-      <div class="flex justify-between items-center h-16">
+    <div class="max-w-[1352px] mx-5 xl:mx-20 py-4">
+      <div class="flex justify-between items-center h-16 mb-3 lg:mb-0">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <NuxtLink to="/">
@@ -10,7 +10,7 @@
         </div>
         
         <!-- Navigation Links -->
-        <ul class="hidden md:flex space-x-8">
+        <ul class="hidden lg:flex space-x-8">
           <li v-for="link in navigationLinks" :key="link.label">
             <NuxtLink :to="`/${slugify(link.label)}`" class="flex items-center justify-center gap-x-1 text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-sans font-medium transition-colors duration-200 cursor-pointer">
               <NuxtIcon :name="link.icon" filled />
@@ -20,17 +20,17 @@
         </ul>
         
         <!-- Contact Button -->
-        <div class="flex-shrink-0">
+        <div class="flex-shrink-0 ms-auto lg:ms-0 pe-5 lg:pe-0">
           <NuxtLink to="/contact">
-            <button class="bg-secondary cursor-pointer font-sans font-bold uppercase text-primary px-8 py-5 rounded-full text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <button class="bg-secondary cursor-pointer font-sans font-bold uppercase text-primary border-2 border-primary lg:border-none px-8 py-3 lg:py-5 rounded-full text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
               Contact us
             </button>
           </NuxtLink>
         </div>
         
         <!-- Mobile menu button -->
-        <div class="md:hidden">
-          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 p-2">
+        <div class="lg:hidden">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 p-2 cursor-pointer">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path v-if="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
