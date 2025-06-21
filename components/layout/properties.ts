@@ -20,7 +20,7 @@ const navigationLinks: NavLinks[] = [
 ]
 
 const footerLinks: NavLinks[] = [
-    {
+    {   
         label: 'Terms and Conditions',
     },
     {
