@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:flex-row items-center justify-start max-w-[1352px] mx-auto gap-x-4 my-30">
+  <div class="flex flex-col md:flex-row items-center justify-start px-20 mx-auto gap-x-4 my-30">
     <PaginationDots :current="current" :total="props.content.length" :select="select" />
     <div class="ml-16 mr-10 overflow-hidden h-[440px]">
       <div 
