@@ -31,10 +31,31 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [
-      tailwindcss()
+      tailwindcss() as any
     ]
   },
-  modules: ['nuxt-icons', '@nuxt/image', '@nuxtjs/i18n'],
+  modules: ['@nuxt/image','nuxt-icons', '@nuxtjs/i18n'],
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+    format: ['webp'],
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 64,
+          height: 64,
+        },
+      },
+    },
+    densities: [1, 2, 3],
+  },
   i18n: {
     locales: [
       {
