@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-[1352px] mx-auto py-20 flex flex-col items-center justify-center">
-    <Heading variant="h3" class="max-w-[1016px] mx-auto text-center">
+  <div class="max-w-[304px] lg:max-w-[1352px] mx-auto py-10 lg:py-20 flex flex-col items-center justify-center">
+    <Heading variant="h3" class="lg:max-w-[1016px] mx-auto text-center">
       {{ quote }}
     </Heading>
     <NuxtIcon name="hr" filled class="text-[60px] mx-auto"  />
