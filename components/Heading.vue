@@ -15,10 +15,10 @@ const props = defineProps<{
 }>();
 
 const headingVariants = {
-    "h1": "text-[80px]",
+    "h1": "text-[40px] lg:text-[80px]",
     "h2": "text-[56px]",
-    "h3": "text-[40px]",
-    "h4": "text-[32px]",
+    "h3": "text-[24px] lg:text-[40px]",
+    "h4": "text-[24px] lg:text-[32px]",
     "h5": "text-lg",
     "h6": "text-base",
 }

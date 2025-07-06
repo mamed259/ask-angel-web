@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col md:flex-row items-center justify-center gap-4 my-30 mx-5 xl:mx-20">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-4 my-30 mx-5 xl:mx-20">
     <div
     v-for="(card, index) in cardContent"
     :key="index"
     class="max-w-[440px] max-h-[620px] pt-12 w-full h-full flex flex-col items-center justify-start overflow-y-hidden rounded-4xl relative"
     :style="{ backgroundColor: card.bgColor }"
   >
-    <NuxtImg :src="card.image" alt="Card Image" />
+    <img :src="card.image" width="271" alt="Card Image" class="max-w-[271px] w-[222px] lg:w-full" />
     <div class="flex flex-col items-center justify-start">
         <Heading variant="h5" class="text-center z-10">{{ card.title }}</Heading>
         <p class="text-center">{{ card.perex }}</p>
@@ -20,8 +20,8 @@
          :style="{ background: `linear-gradient(180deg, transparent 0%, ${card.bgColor} 100%)` }">
     </span>
     <div class="absolute bottom-4 left-0 right-0 h-52 z-10 px-8 flex flex-col gap-y-3 items-start justify-center">
-        <Heading variant="h4" class="max-w-[300px] font-light">{{ card.title }}</Heading>
-        <p class="font-sans text-xl font-light text-primary">{{ card.perex }}</p>
+        <Heading variant="h4" class="max-w-[225px] lg:max-w-[300px] font-light">{{ card.title }}</Heading>
+        <p class="font-sans text-base lg:text-xl font-light text-primary">{{ card.perex }}</p>
     </div>
   </div>
   </div>
