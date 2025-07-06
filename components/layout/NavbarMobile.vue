@@ -1,21 +1,27 @@
 <template>
-    <div v-if="mobileMenuOpen" class="lg:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-200">
-            <NuxtLink 
+    <div v-if="mobileMenuOpen" class="lg:hidden bg-white rounded-xl">
+        <div class="p-6 space-y-20">
+            <div class="flex flex-col gap-y-8">
+                <NuxtLink 
                 v-for="link in navigationLinks" 
                 :key="link.label"
                 :to="`/${slugify(link.label)}`"
-                class="flex items-center justify-start gap-x-1 text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-sans font-medium"
+                class="flex items-center justify-start gap-x-1 text-gray-700 hover:text-gray-900 text-base font-sans font-medium"
                 @click="closeMobileMenu"
             >
-                <NuxtIcon  :name="link.icon" filled />
+                <NuxtIcon  
+                v-if="link.icon"
+                :name="link.icon" filled />
                 <p class="mb-0.5">{{ link.label }}</p>
             </NuxtLink>
-            <NuxtLink to="/contact" @click="mobileMenuOpen = false">
-                <button class="w-full mt-2 font-sans bg-primary hover:bg-primary/80 cursor-pointer text-background rounded-full px-6 py-3 text-sm font-medium transition-colors duration-200">
+            </div>
+            <div>
+                <NuxtLink to="/contact" @click="mobileMenuOpen = false">
+                <button class="w-[160px] mt-2 font-sans bg-secondary hover:bg-secondary/90 cursor-pointer text-primary rounded-full px-6 py-4 text-base font-bold transition-colors duration-200">
                     CONTACT US
                 </button>
             </NuxtLink>
+            </div>
         </div>
     </div>
 </template>
