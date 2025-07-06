@@ -5,9 +5,9 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev:en": "nuxt dev --locale en",
-    "dev:cs": "nuxt dev --locale cs",
-    "dev:de": "nuxt dev --locale de",
+    "dev:en": "LOCALE=en nuxt dev",
+    "dev:cs": "LOCALE=cs nuxt dev",
+    "dev:de": "LOCALE=de nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -16,6 +16,7 @@
     "@nuxt/image": "^1.10.0",
     "@nuxtjs/i18n": "^9.5.5",
     "@tailwindcss/vite": "^4.1.10",
+    "@vueuse/core": "^13.5.0",
     "nuxt": "^3.17.5",
     "nuxt-icons": "^3.2.1",
     "tailwindcss": "^4.1.10",
