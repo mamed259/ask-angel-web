@@ -1,12 +1,18 @@
 <template>
-  <div class="flex flex-col items-center justify-center gap-y-4 px-[21px] py-[32px] bg-secondary rounded-full">
+  <div class="flex items-center justify-center gap-y-4  bg-secondary rounded-full" 
+  :class="[
+    orientation === 'vertical' ? 'flex-col' : 'flex-row',
+    orientation === 'vertical' ? 'gap-y-4' : 'gap-x-2',
+    orientation === 'vertical' ? 'px-[21px] py-[32px]' : 'px-[24px] py-[16px]'
+  ]">
         <button 
           v-for="i in total" 
           :key="i"
           @click="select(i - 1)"
           :class="[
-            'size-[14px] rounded-full cursor-pointer transition-colors duration-200',
-            (i - 1) === props.current ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/60'
+            'rounded-full cursor-pointer transition-colors duration-200',
+            (i - 1) === props.current ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/60',
+            orientation === 'vertical' ? 'size-[14px]' : 'size-[8px]'
           ]"
           :aria-label="`Go to slide ${i}`"
         ></button>
@@ -20,6 +26,7 @@ interface PaginationDotsProps {
   current: number;
   total: number;
   select: (index: number) => void;
+  orientation: 'horizontal' | 'vertical';
 }
 
 const props = defineProps<PaginationDotsProps>();
