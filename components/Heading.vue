@@ -16,7 +16,7 @@ const props = defineProps<{
 
 const headingVariants = {
     "h1": "text-[40px] lg:text-[80px]",
-    "h2": "text-[56px]",
+    "h2": "text-[40px] xl:text-[56px]",
     "h3": "text-[24px] lg:text-[40px]",
     "h4": "text-[24px] lg:text-[32px]",
     "h5": "text-lg",

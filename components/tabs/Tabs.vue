@@ -1,9 +1,9 @@
 <template>
-<div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto xl:mx-20 py-30 3xl:mx-auto">
+<div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto xl:mx-20 py-30 2xl:mx-auto">
   <Heading variant="h2" class="text-center z-10">
     Sustainable Change <br>One Goal at a Time
   </Heading>
-  <p class="text-center text-primary text-xl">
+  <p class="text-center text-primary text-base xl:text-[22px]">
     No pressure. Just progress. What can you achieve?
   </p>
 
