@@ -98,7 +98,6 @@ const props = defineProps<{
 }>()
 const current = ref<number>(0)
 
-// Touch handling for mobile swipe
 const touchStartX = ref<number>(0)
 const touchStartY = ref<number>(0)
 const touchEndX = ref<number>(0)
@@ -111,7 +110,7 @@ const handleTouchStart = (e: TouchEvent) => {
 }
 
 const handleTouchMove = (e: TouchEvent) => {
-  e.preventDefault() // Prevent scrolling while swiping
+  e.preventDefault()
 }
 
 const handleTouchEnd = (e: TouchEvent) => {
@@ -124,15 +123,12 @@ const handleSwipe = () => {
   const deltaX = touchEndX.value - touchStartX.value
   const deltaY = touchEndY.value - touchStartY.value
   
-  // Check if horizontal swipe is more significant than vertical
   if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
     if (deltaX > 0) {
-      // Swipe right - go to previous slide
       if (current.value > 0) {
         current.value--
       }
     } else {
-      // Swipe left - go to next slide
       if (current.value < props.content.length - 1) {
         current.value++
       }
