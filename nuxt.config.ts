@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     ]
   },
   modules: ['@nuxt/image','nuxt-icons', '@nuxtjs/i18n'],
+ 
   image: {
     screens: {
       xs: 320,
@@ -43,16 +44,6 @@ export default defineNuxtConfig({
       lg: 1024,
       xl: 1280,
       xxl: 1536,
-    },
-    format: ['webp'],
-    presets: {
-      avatar: {
-        modifiers: {
-          format: 'webp',
-          width: 64,
-          height: 64,
-        },
-      },
     },
     densities: [1, 2, 3],
   },
