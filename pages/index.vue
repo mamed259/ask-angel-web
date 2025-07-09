@@ -81,7 +81,7 @@ import Hero from '../components/Hero.vue';
 import Slider from '../components/Slider.vue';
 import QuoteBlock from '../components/QuoteBlock.vue';
 import Card from '../components/Card.vue';
-import Tabs from '../components/Tabs.vue';
+import Tabs from '../components/tabs/Tabs.vue';
 
 const quoteContent = {
   quote: "Health is outcome of many factors. We're the first app to unify all its drivers into one intelligent system—for lasting, evidence-based change.",

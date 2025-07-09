@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import Heading from './Heading.vue';
-import type { TabSchema, TabUnions } from './Tabs.vue';
+import Heading from '../Heading.vue'
+import type { TabSchema, TabUnions } from './tabsData'
 
 const props = defineProps<{
     tab: TabSchema,
