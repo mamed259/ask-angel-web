@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full">
+  <footer class="w-full pt-56 pb-6 footer">
     <div class="max-w-[1352px] mx-auto">
       <div class="flex items-end h-16 justify-between">
         <div class="flex-shrink-0">
@@ -33,7 +33,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </footer>
 </template>
 
 <script setup lang="ts">
@@ -68,3 +68,9 @@ const footerLinks: NavLinks[] = [
     }
 ]
 </script>
+
+<style lang="scss">
+.footer{
+  background: linear-gradient(180deg, rgba(255, 213, 166, 0.00) 0%, #FFD5A6 100%);
+}
+</style>
