@@ -145,6 +145,19 @@
         </div>
       </div>
     </div>
+    <div class="max-w-[1352px] mx-auto py-30 flex flex-col items-center">
+    <Heading variant="h1" class="lg:text-[72px]! font-light z-20">
+        Your Health Data
+      </Heading>
+      <span class="flex items-center space-x-20 relative">
+        <NuxtIcon name="lock" filled class="absolute -top-4 left-35 text-[100px] z-10" />
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px] z-30">Fully</p>
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px]">Protected</p>
+      </span>
+      <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-6 max-w-[770px] mx-auto">
+        We treat your personal health data with the highest level of security. Everything you share is encrypted, stored securely, and never sold. You stay in control of what’s tracked, what’s shared, and when it’s deleted. Because your trust is the foundation of everything we do.
+      </p>
+    </div>
 
     <div class="p-6 xl:px-10 xl:py-20 bg-white rounded-[32px] max-w-[1010px] mx-auto my-30 relative mt-96">
       <img src="../assets/icons/fall.png" class="absolute top-[-100px] max-w-[365px]" alt="">
