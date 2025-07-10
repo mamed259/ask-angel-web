@@ -58,9 +58,8 @@
     },
     ]" />
 
-
-    <Tabs/>
-
+     <Tabs/>
+    <CardCarousel :predictionCards="predictionCards" />
     <div class="max-w-[1352px] mx-auto my-30">
       <SectionHeader align="center">
         <template #title>
@@ -80,7 +79,7 @@
         </span>
         <div class="bg-white w-[668px] h-[485px] p-10 rounded-[32px] flex flex-col justify-between">
           <button class="bg-primary text-white uppercase font-founders font-semibold text-base px-6 py-3 rounded-full cursor-pointer self-start">
-            start chatting &#8594;
+            start chatting &#8594
           </button>
           <p>
             Health isn’t static—it’s a dynamic interplay of sleep, stress, nutrition, activity, and mental state. Our predictive engine continuously analyzes your biometric trends, behavior patterns, and contextual data to anticipate shifts in your physical and mental well-being—before symptoms manifest.
@@ -227,7 +226,7 @@
           <img src="../assets/icons/like.png" class="h-4" alt="">
         </p>
         <button class="bg-primary text-white uppercase font-founders font-semibold text-base px-32 py-3 rounded-full cursor-pointer self-start table mx-auto mt-4">
-          send &#8594;
+          send &#8594
         </button>
       </form>
     </div>
@@ -236,13 +235,43 @@
 </template>
 
 <script setup lang="ts">
-import Hero from '../components/Hero.vue';
-import Slider from '../components/Slider.vue';
-import QuoteBlock from '../components/QuoteBlock.vue';
-import Card from '../components/Card.vue';
-import Tabs from '../components/tabs/Tabs.vue';
-import SectionHeader from '../components/SectionHeader.vue';
-import Heading from "~/components/Heading.vue";
+import Hero from '../components/Hero.vue'
+import Slider from '../components/Slider.vue'
+import QuoteBlock from '../components/QuoteBlock.vue'
+import Card from '../components/Card.vue'
+import Tabs from '../components/tabs/Tabs.vue'
+import SectionHeader from '../components/SectionHeader.vue'
+import Heading from "~/components/Heading.vue"
+import { ref } from 'vue'
+
+const currentCardIndex = ref(0)
+
+const predictionCards = [
+  {
+    id: 1,
+    title: 'Smart Predictions for Better Choices',
+    subtitle: 'AI-driven predictions for short-term recovery and long-term health resilience.',
+    bgColor: '#FFD5A6',
+    buttonText: 'tell me more →',
+    content: "Health isn't static—it's a dynamic interplay of sleep, stress, nutrition, activity, and mental state. Our predictive engine continuously analyzes your biometric trends, behavior patterns, and contextual data to anticipate shifts in your physical and mental well-being—before symptoms manifest."
+  },
+  {
+    id: 2,
+    title: 'Your Health Data for Better Decisions',
+    subtitle: 'We treat your personal health data with the highest level of security.',
+    bgColor: '#E3D899',
+    buttonText: 'discover insights →',
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
+  },
+  {
+    id: 3,
+    title: 'Real Rewards for Your Health',
+    subtitle: 'We take the mission for your healthier lifestyle seriously.',
+    bgColor: '#99BFE3',
+    buttonText: 'learn more →',
+    content: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae Mauris viverra veniam sit amet lacus cursus, in vulputate mauris tempus. Proin congue erat non ex sodales, vel sodales nisl molestie. Integer placerat turpis quis ante venenatis, eu finibus nulla facilisis. Nulla facilisi."
+  }
+]
 
 const rewards = [
   {
@@ -300,12 +329,14 @@ const quoteContent = {
   },
 }
 
-// const form = document.getElementById("my-form") as HTMLFormElement;
+// TODO: Add formspree form @mamed259
+
+// const form = document.getElementById("my-form") as HTMLFormElement
   
 //   async function handleSubmit(event: Event) {
-//     event.preventDefault();
-//     const status = document.getElementById("my-form-status") as HTMLDivElement;
-//     const data = new FormData(event.target as HTMLFormElement);
+//     event.preventDefault()
+//     const status = document.getElementById("my-form-status") as HTMLDivElement
+//     const data = new FormData(event.target as HTMLFormElement)
 //     fetch((event.target as HTMLFormElement).action, {
 //       method: (event.target as HTMLFormElement).method,
 //       body: data,
@@ -314,7 +345,7 @@ const quoteContent = {
 //       }
 //     }).then(response => {
 //       if (response.ok) {
-//         status.innerHTML = "Thanks for your submission!";
+//         status.innerHTML = "Thanks for your submission!"
 //         form.reset()
 //       } else {
 //         response.json().then(data => {
@@ -327,7 +358,7 @@ const quoteContent = {
 //       }
 //     }).catch(error => {
 //       status.innerHTML = "Oops! There was a problem submitting your form"
-//     });
+//     })
 //   }
 //   form?.addEventListener("submit", handleSubmit)
 
