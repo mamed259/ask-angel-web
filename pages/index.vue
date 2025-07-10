@@ -91,74 +91,87 @@
       </div>
     </div>
 
-    <div class="max-w-[1352px] mx-auto py-30 flex flex-col items-center">
-      <Heading variant="h1" class="lg:text-[64px]! font-light z-20">
-        Motivation That Works:
-      </Heading>
-      <span class="flex items-center space-x-20 relative">
+    <div
+        :style="`background-image: url(${motivationImg})`"
+    >
+      <div
+          class="max-w-[1352px] mx-auto py-30 flex flex-col items-center">
+        <Heading variant="h1" class="lg:text-[64px]! font-light z-20">
+          Motivation That Works:
+        </Heading>
+        <span class="flex items-center space-x-20 relative">
         <NuxtIcon name="angel-award" filled class="absolute -top-5 left-30 text-[130px] z-10" />
         <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px] z-30">Real</p>
         <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px]">Rewards</p>
       </span>
-      <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-12 max-w-[770px] mx-auto">
-        We take the mission fro your healthier lifestyle seriously. For the points you earn for your progress you can get health-boosting rewards—like discounts on fitness gear, healthy food, and more.
-      </p>
+        <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-12 max-w-[770px] mx-auto">
+          We take the mission fro your healthier lifestyle seriously. For the points you earn for your progress you can get health-boosting rewards—like discounts on fitness gear, healthy food, and more.
+        </p>
 
-      <div class="flex justify-center flex-wrap gap-8 mt-12">
-        <!-- First row: 2 blocks -->
-        <div class="flex gap-x-8">
-          <div v-for="reward in rewards.slice(0, 2)" :key="reward.title" 
-               class="flex flex-col items-center flex-1">
-            <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
-              <div class="absolute w-11 h-11 rounded-full flex items-center justify-center" 
-                   :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
-                <NuxtIcon :name="reward.icon.name" filled class="text-[28px]" />
+        <div class="flex justify-center flex-wrap gap-8 mt-12">
+          <!-- First row: 2 blocks -->
+          <div class="flex gap-x-8">
+            <div v-for="reward in rewards.slice(0, 2)" :key="reward.title"
+                 class="flex flex-col items-center flex-1">
+              <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
+                <div class="absolute w-11 h-11 rounded-full flex items-center justify-center"
+                     :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
+                  <NuxtIcon :name="reward.icon.name" filled class="text-[28px]" />
+                </div>
+                <Heading variant="h5" class="text-[24px]! font-light">
+                  {{ reward.title }}
+                </Heading>
+                <p class="text-sm font-founders mt-2 font-light leading-[130%]">
+                  {{ reward.description }}
+                </p>
               </div>
-              <Heading variant="h5" class="text-[24px]! font-light">
-                {{ reward.title }}
-              </Heading>
-              <p class="text-sm font-founders mt-2 font-light leading-[130%]">
-                {{ reward.description }}
-              </p>
             </div>
           </div>
-        </div>
-        
-        <!-- Second row: 3 blocks -->
-        <div class="flex w-full gap-8">
-          <div v-for="reward in rewards.slice(2)" :key="reward.title" 
-               class="flex flex-col items-center flex-1">
-            <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
-              <div class="absolute w-11 h-11 rounded-full flex items-center justify-center" 
-                   :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
-                <NuxtIcon :name="reward.icon.name" filled class="text-[28px]" />
+
+          <!-- Second row: 3 blocks -->
+          <div class="flex w-full gap-8">
+            <div v-for="reward in rewards.slice(2)" :key="reward.title"
+                 class="flex flex-col items-center flex-1">
+              <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
+                <div class="absolute w-11 h-11 rounded-full flex items-center justify-center"
+                     :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
+                  <NuxtIcon :name="reward.icon.name" filled class="text-[28px]" />
+                </div>
+                <Heading variant="h5" class="text-[24px]! font-light">
+                  {{ reward.title }}
+                </Heading>
+                <p class="text-sm font-founders mt-2 font-light leading-[130%]">
+                  {{ reward.description }}
+                </p>
               </div>
-              <Heading variant="h5" class="text-[24px]! font-light">
-                {{ reward.title }}
-              </Heading>
-              <p class="text-sm font-founders mt-2 font-light leading-[130%]">
-                {{ reward.description }}
-              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="max-w-[1352px] mx-auto py-30 flex flex-col items-center">
-    <Heading variant="h1" class="lg:text-[72px]! font-light z-20">
-        Your Health Data
-      </Heading>
-      <span class="flex items-center space-x-20 relative">
+
+
+    <div
+        :style="`background-image: url(${healthDataImg})`"
+        class="bg-cover bg-bottom"
+
+    >
+      <div class="max-w-[1352px] mx-auto py-30 pb-96 flex flex-col items-center">
+        <Heading variant="h1" class="lg:text-[72px]! font-light z-20">
+          Your Health Data
+        </Heading>
+        <span class="flex items-center space-x-20 relative">
         <NuxtIcon name="lock" filled class="absolute -top-4 left-35 text-[100px] z-10" />
         <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px] z-30">Fully</p>
         <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px]">Protected</p>
       </span>
-      <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-6 max-w-[770px] mx-auto">
-        We treat your personal health data with the highest level of security. Everything you share is encrypted, stored securely, and never sold. You stay in control of what’s tracked, what’s shared, and when it’s deleted. Because your trust is the foundation of everything we do.
-      </p>
+        <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-6 max-w-[770px] mx-auto">
+          We treat your personal health data with the highest level of security. Everything you share is encrypted, stored securely, and never sold. You stay in control of what’s tracked, what’s shared, and when it’s deleted. Because your trust is the foundation of everything we do.
+        </p>
+      </div>
     </div>
 
-    <div class="p-6 xl:px-10 xl:py-20 bg-white rounded-[32px] max-w-[1010px] mx-auto my-30 relative mt-96">
+    <div class="p-6 xl:px-10 xl:py-20 bg-white rounded-[32px] max-w-[1010px] mx-auto my-30 relative mt-56">
       <img src="../assets/icons/fall.png" class="absolute top-[-100px] max-w-[365px]" alt="">
       <div class="flex flex-col xl:flex-row gap-x-[75px]">
         <div class="flex flex-col justify-center xl:max-w-[465px]">
@@ -243,6 +256,8 @@ import Tabs from '../components/tabs/Tabs.vue'
 import SectionHeader from '../components/SectionHeader.vue'
 import Heading from "~/components/Heading.vue"
 import { ref } from 'vue'
+import motivationImg from '@/assets/icons/motivation.png'
+import healthDataImg from '@/assets/icons/health-data.png'
 
 const currentCardIndex = ref(0)
 
