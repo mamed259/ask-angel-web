@@ -92,6 +92,60 @@
       </div>
     </div>
 
+    <div class="max-w-[1352px] mx-auto py-30 flex flex-col items-center">
+      <Heading variant="h1" class="lg:text-[64px]! font-light z-20">
+        Motivation That Works:
+      </Heading>
+      <span class="flex items-center space-x-20 relative">
+        <NuxtIcon name="angel-award" filled class="absolute -top-5 left-30 text-[130px] z-10" />
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px] z-30">Real</p>
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px]">Rewards</p>
+      </span>
+      <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-12 max-w-[770px] mx-auto">
+        We take the mission fro your healthier lifestyle seriously. For the points you earn for your progress you can get health-boosting rewards—like discounts on fitness gear, healthy food, and more.
+      </p>
+
+      <div class="flex justify-center flex-wrap gap-8 mt-12">
+        <!-- First row: 2 blocks -->
+        <div class="flex gap-x-8">
+          <div v-for="reward in rewards.slice(0, 2)" :key="reward.title" 
+               class="flex flex-col items-center flex-1">
+            <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
+              <div class="absolute w-11 h-11 rounded-full flex items-center justify-center" 
+                   :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
+                <NuxtIcon :name="reward.icon.name" filled class="text-[28px]" />
+              </div>
+              <Heading variant="h5" class="text-[24px]! font-light">
+                {{ reward.title }}
+              </Heading>
+              <p class="text-sm font-founders mt-2 font-light leading-[130%]">
+                {{ reward.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Second row: 3 blocks -->
+        <div class="flex w-full gap-8">
+          <div v-for="reward in rewards.slice(2)" :key="reward.title" 
+               class="flex flex-col items-center flex-1">
+            <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
+              <div class="absolute w-11 h-11 rounded-full flex items-center justify-center" 
+                   :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
+                <NuxtIcon :name="reward.icon.name" filled class="text-[28px]" />
+              </div>
+              <Heading variant="h5" class="text-[24px]! font-light">
+                {{ reward.title }}
+              </Heading>
+              <p class="text-sm font-founders mt-2 font-light leading-[130%]">
+                {{ reward.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="p-6 xl:px-10 xl:py-20 bg-white rounded-[32px] max-w-[1010px] mx-auto my-30 relative mt-96">
       <img src="../assets/icons/fall.png" class="absolute top-[-100px] max-w-[365px]" alt="">
       <div class="flex flex-col xl:flex-row gap-x-[75px]">
@@ -139,18 +193,21 @@
           </svg>
         </div>
       </div>
-      <form action="">
+      <form 
+      id="my-form"
+      action="https://formspree.io/f/xqabrzjl"
+      method="POST"
+      class="mt-10">
         <div class="grid grid-cols-2 gap-2">
-          <div class="col-span-1">
+          <label class="col-span-1">
             <input type="text" placeholder="Your name" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
-          </div>
-          <div class="col-span-1">
+          </label>
+          <label class="col-span-1">
             <input type="email" placeholder="Your email" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
-          </div>
-          <div class="col-span-2">
-            <textarea placeholder="Write us whatever you have on your mind..." class="h-[220px] resize-none rounded-3xl bg-white border-0 outline-0 w-full p-6">
-            </textarea>
-          </div>
+          </label>
+          <label class="col-span-2">
+            <textarea placeholder="Write us whatever you have on your mind..." class="h-56 rounded-3xl bg-white border-0 outline-0 w-full p-6"></textarea>
+          </label>
         </div>
         <p class="text-center font-founders mt-2 flex flex-wrap justify-center items-center">
           We typically respond within 24hrs
@@ -160,7 +217,6 @@
           send &#8594;
         </button>
       </form>
-
     </div>
 
   </section>
@@ -175,6 +231,54 @@ import Tabs from '../components/tabs/Tabs.vue';
 import SectionHeader from '../components/SectionHeader.vue';
 import Heading from "~/components/Heading.vue";
 
+const rewards = [
+  {
+    title: "Healthy Food & Dining",
+    description: "Organic grocery stores, natural products, plant-based and vegetarian options – from shopping baskets to restaurant plates, we support nutritious, wholesome eating.",
+    icon: {
+      name: "rewards/food",
+      bgColor: "#FBAD72",
+      class: "-top-6 right-20"
+    },
+  },
+  {
+    title: "Books & Educational Resources",
+    description: "From novels to non-fiction, reading is nourishment for the mind. Enjoy discounts on books of all genres to support your personal growth and relaxation.",
+    icon: {
+      name: "rewards/brain",
+      bgColor: "#72ADFB",
+      class: "top-11 -right-6"
+    },
+  },
+  {
+    title: "Fitness & Sports Centers",
+    description: "Gyms, yoga studios, dance and sports classes – because movement is essential for a healthy life.",
+    icon: {
+      name: "rewards/sport",
+      bgColor: "#FBE072",
+      class: "-top-5 right-20"
+    },
+  },
+  {
+    title: "Mindfulness & Wellbeing Services",
+    description: "Meditation, mindfulness, therapy, coaching, and workshops for inner balance and emotional health.",
+    icon: {
+      name: "rewards/heart",
+      bgColor: "#FFA2A2",
+      class: "-bottom-8 right-40"
+    },
+  },
+  {
+    title: "Outdoor & Leisure Activities",
+    description: "Health isn’t just about the gym – support for active outdoor lifestyles like hiking, cycling, or relaxing in nature.",
+    icon: {
+      name: "rewards/outdoor",
+      bgColor: "#D4D672",
+      class: "-top-5 -left-5"
+    },
+  },
+]
+
 const quoteContent = {
   quote: "Health is outcome of many factors. We're the first app to unify all its drivers into one intelligent system—for lasting, evidence-based change.",
   author: {
@@ -182,5 +286,36 @@ const quoteContent = {
     image: "/images/quote-person.png",
   },
 }
+
+// const form = document.getElementById("my-form") as HTMLFormElement;
+  
+//   async function handleSubmit(event: Event) {
+//     event.preventDefault();
+//     const status = document.getElementById("my-form-status") as HTMLDivElement;
+//     const data = new FormData(event.target as HTMLFormElement);
+//     fetch((event.target as HTMLFormElement).action, {
+//       method: (event.target as HTMLFormElement).method,
+//       body: data,
+//       headers: {
+//           'Accept': 'application/json'
+//       }
+//     }).then(response => {
+//       if (response.ok) {
+//         status.innerHTML = "Thanks for your submission!";
+//         form.reset()
+//       } else {
+//         response.json().then(data => {
+//           if (Object.hasOwn(data, 'errors')) {
+//             status.innerHTML = data["errors"].map((error: { message: string }) => error["message"]).join(", ")
+//           } else {
+//             status.innerHTML = "Oops! There was a problem submitting your form"
+//           }
+//         })
+//       }
+//     }).catch(error => {
+//       status.innerHTML = "Oops! There was a problem submitting your form"
+//     });
+//   }
+//   form?.addEventListener("submit", handleSubmit)
 
 </script> 
