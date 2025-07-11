@@ -1,5 +1,5 @@
 <template>
-<div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto xl:mx-20 py-30 2xl:mx-auto">
+<div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto xl:mx-20 py-16 lg:py-30 2xl:mx-auto">
   <SectionHeader align="center" class="mb-10">
     <template #title>
       Sustainable Change <br>One Goal at a Time

@@ -12,7 +12,7 @@
           :class="[
             'rounded-full cursor-pointer transition-colors duration-200',
             (i - 1) === props.current ? 'bg-primary' : 'bg-primary/40 hover:bg-primary/60',
-            orientation === 'vertical' ? 'size-[14px]' : 'size-[8px] xl:size-[12px]'
+            orientation === 'vertical' ? 'size-[14px]' : 'size-[8px] xl:size-[12px] mx-1'
           ]"
           :aria-label="`Go to slide ${i}`"
         ></button>

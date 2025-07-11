@@ -60,7 +60,8 @@
 
      <Tabs/>
     <CardCarousel :predictionCards="predictionCards" />
-    <div class="max-w-[1352px] mx-auto my-30">
+      <div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto py-16 lg:py-30">
+
       <SectionHeader align="center">
         <template #title>
           Meet Your Angel: Coach <br>That trully Understands You
@@ -69,7 +70,7 @@
           Real-time guidance. Emotional support. <br>Smarter decisions.
         </template>
       </SectionHeader>
-      <div class="flex justify-center gap-x-4 mt-12">
+      <div class="flex justify-center gap-4 mt-12 flex-col lg:flex-row">
         <span class="relative">
           <NuxtIcon name="angel" filled class="absolute -top-24 left-14 text-[270px]" />
           <img
@@ -77,7 +78,7 @@
           src="/images/chat.png" 
           alt="chat" />
         </span>
-        <div class="bg-white w-[668px] h-[485px] p-10 rounded-[32px] flex flex-col justify-between">
+        <div class="bg-white lg:w-[668px] lg:h-[485px] p-10 rounded-[32px] flex flex-col justify-between gap-5 lg:gap-0">
           <button class="bg-primary text-white uppercase font-founders font-semibold text-base px-6 py-3 rounded-full cursor-pointer self-start">
             start chatting &#8594
           </button>
@@ -95,24 +96,26 @@
         :style="`background-image: url(${motivationImg})`"
     >
       <div
-          class="max-w-[1352px] mx-auto py-30 flex flex-col items-center">
-        <Heading variant="h1" class="lg:text-[64px]! font-light z-20">
+          class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto py-16 lg:py-30 flex flex-col items-center">
+
+        <Heading variant="h1" class="lg:text-[64px]! text-[32px]! font-light z-20">
           Motivation That Works:
         </Heading>
-        <span class="flex items-center space-x-20 relative">
-        <NuxtIcon name="angel-award" filled class="absolute -top-5 left-30 text-[130px] z-10" />
-        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px] z-30">Real</p>
-        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px]">Rewards</p>
+        <span class="flex items-center lg:space-x-20 space-x-10 relative">
+        <NuxtIcon name="angel-award" filled class="absolute -top-5 lg:left-30 left-16 lg:text-[130px] text-[55px] z-10" />
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[40px] lg:text-[80px] z-30">Real</p>
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[40px] lg:text-[80px]">Rewards</p>
       </span>
         <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-12 max-w-[770px] mx-auto">
           We take the mission fro your healthier lifestyle seriously. For the points you earn for your progress you can get health-boosting rewards—like discounts on fitness gear, healthy food, and more.
         </p>
 
-        <div class="flex justify-center flex-wrap gap-8 mt-12">
+        <div class="flex justify-center flex-wrap lg:gap-8 mt-12">
           <!-- First row: 2 blocks -->
-          <div class="flex gap-x-8">
-            <div v-for="reward in rewards.slice(0, 2)" :key="reward.title"
-                 class="flex flex-col items-center flex-1">
+          <div class="lg:flex gap-x-8">
+            <div
+                v-for="reward in rewards.slice(0, 2)" :key="reward.title"
+                 class="lg:flex flex-col items-center flex-1 w-80 lg:w-auto mb-8 lg:mb-0">
               <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
                 <div class="absolute w-11 h-11 rounded-full flex items-center justify-center"
                      :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
@@ -129,9 +132,9 @@
           </div>
 
           <!-- Second row: 3 blocks -->
-          <div class="flex w-full gap-8">
+          <div class="flex w-full lg:gap-8 flex-col lg:flex-row items-center">
             <div v-for="reward in rewards.slice(2)" :key="reward.title"
-                 class="flex flex-col items-center flex-1">
+                 class="lg:flex flex-col items-center flex-1 w-80 lg:w-auto mb-8 lg:mb-0">
               <div class="p-6 bg-white rounded-[32px] max-w-[424px] relative">
                 <div class="absolute w-11 h-11 rounded-full flex items-center justify-center"
                      :class="reward.icon.class" :style="{ backgroundColor: reward.icon.bgColor }">
@@ -146,6 +149,8 @@
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
@@ -156,14 +161,14 @@
         class="bg-cover bg-bottom"
 
     >
-      <div class="max-w-[1352px] mx-auto py-30 pb-96 flex flex-col items-center">
-        <Heading variant="h1" class="lg:text-[72px]! font-light z-20">
+      <div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1352px] mx-auto py-16 lg:py-30 pb-56 lg:pb-96 2xl:mx-auto flex items-center flex-col">
+        <Heading variant="h1" class="lg:text-[72px]! text-[32px]! font-light z-20">
           Your Health Data
         </Heading>
-        <span class="flex items-center space-x-20 relative">
-        <NuxtIcon name="lock" filled class="absolute -top-4 left-35 text-[100px] z-10" />
-        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px] z-30">Fully</p>
-        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[80px]">Protected</p>
+        <span class="flex items-center lg:space-x-20 space-x-10 relative">
+        <NuxtIcon name="lock" filled class="absolute -top-4 lg:left-35 left-17 lg:text-[100px] text-[55px] z-10" />
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[40px] lg:text-[80px] z-30">Fully</p>
+        <p class="font-larken font-normal text-primary leading-[100%] tracking-tight text-center text-[40px] lg:text-[80px]">Protected</p>
       </span>
         <p class="font-founders text-center text-base lg:text-[22px] font-light leading-[140%] mt-6 max-w-[770px] mx-auto">
           We treat your personal health data with the highest level of security. Everything you share is encrypted, stored securely, and never sold. You stay in control of what’s tracked, what’s shared, and when it’s deleted. Because your trust is the foundation of everything we do.
@@ -171,7 +176,7 @@
       </div>
     </div>
 
-    <div class="p-6 xl:px-10 xl:py-20 bg-white rounded-[32px] max-w-[1010px] mx-auto my-30 relative mt-56">
+    <div class="min-w-[320px] max-w-[361px] sm:max-w-[624px] xl:max-w-[1010px] bg-white rounded-[32px] p-6 xl:px-10 xl:py-20  mx-auto my-30 relative mt-56">
       <img src="../assets/icons/fall.png" class="absolute top-[-100px] max-w-[365px]" alt="">
       <div class="flex flex-col xl:flex-row gap-x-[75px]">
         <div class="flex flex-col justify-center xl:max-w-[465px]">
@@ -184,22 +189,31 @@
           </p>
 
         </div>
-        <form class="max-w-[372px] relative w-full">
-          <input type="text" placeholder="Enter your email" class="h-14 rounded-4xl bg-[#FAF3EB] border-0 outline-0 w-full px-6 font-founders">
-          <button class="bg-primary text-white uppercase font-founders font-semibold text-base px-4 py-2.5 rounded-full cursor-pointer absolute right-1.5 top-1">
+        <form
+            @submit.prevent="submitFormSub"
+            class="max-w-[372px] relative w-full mt-4 lg:mt-0">
+          <input
+              v-model="formSub.email"
+              type="email" placeholder="Enter your email" class="h-14 rounded-4xl bg-[#FAF3EB] border-0 outline-0 w-full px-6 font-founders">
+          <button
+              type="submit"
+              class="bg-primary text-white uppercase font-founders font-semibold text-base px-4 py-2.5 rounded-full cursor-pointer absolute right-1.5 top-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
               <path d="M24.79 14.4355C22.8517 16.5247 17.74 20.8586 15.79 22.9355" stroke="#FAF3EB" stroke-width="2" stroke-linecap="round"/>
               <path d="M24.79 14.4355C23.832 13.559 16.8003 7.36371 15.7903 6.55683" stroke="#FAF3EB" stroke-width="2" stroke-linecap="round"/>
               <path d="M23.29 13.9355C21.9915 13.945 10.29 14.9355 2.29004 14.4355" stroke="#FAF3EB" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
+          <p v-if="statusSub === 'success'" class="text-center text-green-600 mt-4">Message sent successfully!</p>
+          <p v-else-if="statusSub === 'error'" class="text-center text-red-600 mt-4">There was an error. Please try again.</p>
+
         </form>
 
       </div>
     </div>
 
 
-    <div class="max-w-[670px] mx-auto my-30">
+    <div class="min-w-[320px] max-w-[361px] sm:max-w-[670px] mx-auto my-30">
       <div class="grid grid-cols-3 pb-14">
         <div class="col-span-1 flex justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28" fill="none">
@@ -218,29 +232,39 @@
           </svg>
         </div>
       </div>
-      <form 
-      id="my-form"
-      action="https://formspree.io/f/xqabrzjl"
-      method="POST"
+      <form
+          @submit.prevent="submitForm"
       class="mt-10">
-        <div class="grid grid-cols-2 gap-2">
-          <label class="col-span-1">
-            <input type="text" placeholder="Your name" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
-          </label>
-          <label class="col-span-1">
-            <input type="email" placeholder="Your email" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
-          </label>
-          <label class="col-span-2">
-            <textarea placeholder="Write us whatever you have on your mind..." class="h-56 rounded-3xl bg-white border-0 outline-0 w-full p-6"></textarea>
-          </label>
+        <div class="lg:grid lg:grid-cols-2 gap-2">
+          <div class="col-span-1 mb-2 lg:mb-0">
+            <input
+                v-model="form.name"
+                type="text" placeholder="Your name" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
+          </div>
+          <div class="col-span-1 mb-2 lg:mb-0">
+            <input
+                v-model="form.email"
+                type="email" placeholder="Your email" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
+          </div>
+          <div class="col-span-2">
+            <textarea
+                v-model="form.message"
+                placeholder="Write us whatever you have on your mind..." class="h-56 rounded-3xl bg-white border-0 outline-0 w-full p-6"></textarea>
+          </div>
         </div>
         <p class="text-center font-founders mt-2 flex flex-wrap justify-center items-center">
           We typically respond within 24hrs
           <img src="../assets/icons/like.png" class="h-4" alt="">
         </p>
-        <button class="bg-primary text-white uppercase font-founders font-semibold text-base px-32 py-3 rounded-full cursor-pointer self-start table mx-auto mt-4">
+        <button
+            type="submit"
+            class="bg-primary text-white uppercase font-founders font-semibold text-base px-32 py-3 rounded-full cursor-pointer self-start table mx-auto mt-4">
           send &#8594
         </button>
+
+        <p v-if="status === 'success'" class="text-center text-green-600 mt-4">Message sent successfully!</p>
+        <p v-else-if="status === 'error'" class="text-center text-red-600 mt-4">There was an error. Please try again.</p>
+
       </form>
     </div>
 
@@ -268,6 +292,7 @@ const predictionCards = [
     subtitle: 'AI-driven predictions for short-term recovery and long-term health resilience.',
     bgColor: '#FFD5A6',
     buttonText: 'tell me more →',
+    image: "/images/smart-1.png",
     content: "Health isn't static—it's a dynamic interplay of sleep, stress, nutrition, activity, and mental state. Our predictive engine continuously analyzes your biometric trends, behavior patterns, and contextual data to anticipate shifts in your physical and mental well-being—before symptoms manifest."
   },
   {
@@ -276,6 +301,7 @@ const predictionCards = [
     subtitle: 'We treat your personal health data with the highest level of security.',
     bgColor: '#E3D899',
     buttonText: 'discover insights →',
+    image: "/images/smart-2.png",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
   },
   {
@@ -284,6 +310,7 @@ const predictionCards = [
     subtitle: 'We take the mission for your healthier lifestyle seriously.',
     bgColor: '#99BFE3',
     buttonText: 'learn more →',
+    image: "/images/smart-3.png",
     content: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae Mauris viverra veniam sit amet lacus cursus, in vulputate mauris tempus. Proin congue erat non ex sodales, vel sodales nisl molestie. Integer placerat turpis quis ante venenatis, eu finibus nulla facilisis. Nulla facilisi."
   }
 ]
@@ -376,5 +403,70 @@ const quoteContent = {
 //     })
 //   }
 //   form?.addEventListener("submit", handleSubmit)
+
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
+const formSub = ref({
+  email: '',
+})
+
+const status = ref('') // '', 'success', 'error'
+const statusSub = ref('') // '', 'success', 'error'
+
+const submitForm = async () => {
+  try {
+    const formData = new FormData()
+    for (const key in form.value) {
+      formData.append(key, form.value[key])
+    }
+
+    const res = await fetch('https://formspree.io/f/mblynypl', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: formData
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      status.value = 'success'
+      form.value = { name: '', email: '', message: '' }
+    } else {
+      status.value = 'error'
+    }
+  } catch (e) {
+    status.value = 'error'
+  }
+}
+
+const submitFormSub = async () => {
+  try {
+    const formData = new FormData()
+    for (const key in formSub.value) {
+      formData.append(key, formSub.value[key])
+    }
+
+    const res = await fetch('https://formspree.io/f/xqabryed', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: formData
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      statusSub.value = 'success'
+      formSub.value = { email: '' }
+    } else {
+      statusSub.value = 'error'
+    }
+  } catch (e) {
+    statusSub.value = 'error'
+  }
+}
 
 </script> 
