@@ -2,17 +2,20 @@ import tailwindcss from '@tailwindcss/vite'
 
 type Locale = 'en' | 'cs' | 'de'
 
-const defaultLocale: Locale = (process.env.LOCALE as Locale) || 'en'
+const defaultLocale: Locale = (process.env.DEFAULT_LOCALE as Locale) || (process.env.LOCALE as Locale) || 'en'
+const enableDifferentDomains = process.env.ENABLE_DIFFERENT_DOMAINS === 'true'
 
 // Debug of the locale being used
-console.log('🌍 Default locale from .env:', process.env.LOCALE)
+console.log('🌍 Default locale from .env:', process.env.DEFAULT_LOCALE || process.env.LOCALE)
 console.log('🌍 Resolved default locale:', defaultLocale)
+console.log('🌍 Enable different domains:', enableDifferentDomains)
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      locale: defaultLocale
+      locale: defaultLocale,
+      enableDifferentDomains: enableDifferentDomains
     }
   },
   imports: {
@@ -35,7 +38,6 @@ export default defineNuxtConfig({
     ]
   },
   modules: ['@nuxt/image','nuxt-icons', '@nuxtjs/i18n'],
- 
   image: {
     screens: {
       xs: 320,
@@ -52,33 +54,37 @@ export default defineNuxtConfig({
       {
         code: 'en',
         name: 'English',
-        file: 'en.json'
+        file: 'en.json',
+        domain: process.env.NUXT_PUBLIC_I18N_LOCALES_EN_DOMAIN
       },
       {
         code: 'cs',
         name: 'Czech',
-        file: 'cs.json'
+        file: 'cs.json',
+        domain: process.env.NUXT_PUBLIC_I18N_LOCALES_CS_DOMAIN
       },
       {
         code: 'de',
         name: 'German',
-        file: 'de.json'
+        file: 'de.json',
+        domain: process.env.NUXT_PUBLIC_I18N_LOCALES_DE_DOMAIN
       }
     ],
     defaultLocale,
     lazy: true,
     langDir: 'locales',
-    strategy: 'prefix',
+    strategy: enableDifferentDomains ? 'no_prefix' : 'prefix',
     vueI18n: './i18n.config.ts',
-    detectBrowserLanguage: {
+    detectBrowserLanguage: enableDifferentDomains ? false : {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root', // or 'all' to redirect on any page
+      redirectOn: 'root',
       alwaysRedirect: false,
       fallbackLocale: defaultLocale,
       cookieCrossOrigin: false,
       cookieDomain: null,
       cookieSecure: false
-    }
+    },
+    differentDomains: enableDifferentDomains
   }
 })
