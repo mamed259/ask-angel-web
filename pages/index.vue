@@ -149,21 +149,39 @@
       <img src="../assets/icons/fall.png" class="absolute top-[-100px] max-w-[365px]" alt="">
       <div class="flex flex-col xl:flex-row gap-x-[75px]">
         <div class="flex flex-col justify-center xl:max-w-[465px]">
-          <Heading variant="h2" class="w-full z-10 mb-4 mt-8 xl:mt-0">
-            Ask Angel <br>
-            Lands this Fall
+          <Heading v-if="locale === 'cs'" variant="h2" class="w-full z-10 mb-4 mt-8 xl:mt-0">
+            Zeptej se anděla <br/>
+Startujeme letos na podzim.
+
           </Heading>
-          <p class="w-full text-xs xl:text-base font-founders">
+          <p v-if="locale === 'cs'" class="w-full text-xs xl:text-base font-founders">
+            Chceš být mezi prvními a získat 3 měsíce Premium zdarma? Zanech svůj e-mail a dáme ti vědět, až bude aplikace připravená. Žádný spam. Žádné triky.
+          </p>
+          <Heading v-if="locale !== 'cs'" variant="h2" class="w-full z-10 mb-4 mt-8 xl:mt-0">
+            Ask Angel <br> Lands this Fall
+          </Heading>
+          <p v-if="locale !== 'cs'" class="w-full text-xs xl:text-base font-founders">
             Want to be the first to know when we launch—and get 3 months of Premium for free? Leave your email, and we’ll send you one message when the app is ready. That’s it. No spam. No strings.
           </p>
-
         </div>
         <form
             @submit.prevent="submitFormSub"
             class="max-w-[372px] relative w-full mt-4 lg:mt-0">
           <input
               v-model="formSub.email"
-              type="email" placeholder="Enter your email" class="h-14 rounded-4xl bg-[#FAF3EB] border-0 outline-0 w-full px-6 font-founders">
+              type="email" :placeholder="locale === 'cs' ? 'Zadej svůj e-mail' : 'Enter your email'" class="h-14 rounded-4xl bg-[#FAF3EB] border-0 outline-0 w-full px-6 font-founders">
+          <div class="flex items-center mt-4">
+            <input
+              id="privacy-policy"
+              type="checkbox"
+              v-model="formSub.privacy"
+              class="mr-2 w-5 h-5 rounded-xl border-gray-300"
+              required
+            >
+            <label for="privacy-policy" class="text-xs xl:text-base font-founders select-none cursor-pointer">
+              {{ locale === 'cs' ? 'Odkaz na zásady ochrany osobních údajů' : 'Privacy policy copy goes here' }}
+            </label>
+          </div>
           <button
               type="submit"
               class="bg-primary text-white uppercase font-founders font-semibold text-base px-4 py-2.5 rounded-full cursor-pointer absolute right-1.5 top-1">
@@ -173,8 +191,8 @@
               <path d="M23.29 13.9355C21.9915 13.945 10.29 14.9355 2.29004 14.4355" stroke="#FAF3EB" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <p v-if="statusSub === 'success'" class="text-center text-green-600 mt-4">Message sent successfully!</p>
-          <p v-else-if="statusSub === 'error'" class="text-center text-red-600 mt-4">There was an error. Please try again.</p>
+          <p v-if="statusSub === 'success'" class="text-center text-green-600 mt-4">{{ locale === 'cs' ? 'Zpráva odeslána!' : 'Message sent successfully!' }}</p>
+          <p v-else-if="statusSub === 'error'" class="text-center text-red-600 mt-4">{{ locale === 'cs' ? 'Nastala chyba. Zkuste to znovu.' : 'There was an error. Please try again.' }}</p>
 
         </form>
 
@@ -191,8 +209,8 @@
         </div>
         <div class="col-span-1 flex justify-center">
           <Heading variant="h5" class="text-center z-10">
-            Or just let us know <br>
-            if you have any questions
+            {{ locale === 'cs' ? 'Nebo se nám rovnou ozvi' : 'Or just let us know' }} <br>
+            {{ locale === 'cs' ? '' : 'if you have any questions' }}
           </Heading>
         </div>
         <div class="col-span-1 flex justify-center">
@@ -208,31 +226,31 @@
           <div class="col-span-1 mb-2 lg:mb-0">
             <input
                 v-model="form.name"
-                type="text" placeholder="Your name" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
+                type="text" :placeholder="locale === 'cs' ? 'Jméno' : 'Your name'" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
           </div>
           <div class="col-span-1 mb-2 lg:mb-0">
             <input
                 v-model="form.email"
-                type="email" placeholder="Your email" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
+                type="email" :placeholder="locale === 'cs' ? 'E-mail' : 'Your email'" class="h-14 rounded-3xl bg-white border-0 outline-0 w-full px-6">
           </div>
           <div class="col-span-2">
             <textarea
                 v-model="form.message"
-                placeholder="Write us whatever you have on your mind..." class="h-56 rounded-3xl bg-white border-0 outline-0 w-full p-6"></textarea>
+                :placeholder="locale === 'cs' ? 'Napiš, co máš na srdci…' : 'Write us whatever you have on your mind...'" class="h-56 rounded-3xl bg-white border-0 outline-0 w-full p-6"></textarea>
           </div>
         </div>
         <p class="text-center font-founders mt-2 flex flex-wrap justify-center items-center">
-          We typically respond within 24hrs
+          {{ locale === 'cs' ? 'Obvykle odpovídáme do 24 hodin' : 'We typically respond within 24hrs' }}
           <img src="../assets/icons/like.png" class="h-4" alt="">
         </p>
         <button
             type="submit"
             class="bg-primary text-white uppercase font-founders font-semibold text-base px-32 py-3 rounded-full cursor-pointer self-start table mx-auto mt-4">
-          send &#8594
+          {{ locale === 'cs' ? 'Odeslat' : 'send' }} &#8594
         </button>
 
-        <p v-if="status === 'success'" class="text-center text-green-600 mt-4">Message sent successfully!</p>
-        <p v-else-if="status === 'error'" class="text-center text-red-600 mt-4">There was an error. Please try again.</p>
+        <p v-if="status === 'success'" class="text-center text-green-600 mt-4">{{ locale === 'cs' ? 'Zpráva odeslána!' : 'Message sent successfully!' }}</p>
+        <p v-else-if="status === 'error'" class="text-center text-red-600 mt-4">{{ locale === 'cs' ? 'Nastala chyba. Zkuste to znovu.' : 'There was an error. Please try again.' }}</p>
 
       </form>
     </div>
@@ -351,6 +369,7 @@ const form = ref({
 
 const formSub = ref({
   email: '',
+  privacy: false,
 })
 
 const status = ref('')
@@ -362,6 +381,7 @@ const submitForm = async () => {
     formData.append('name', form.value.name)
     formData.append('email', form.value.email)
     formData.append('message', form.value.message)
+    formData.append('privacy', formSub.value.privacy.toString())
 
     const res = await fetch('https://formspree.io/f/mblynypl', {
       method: 'POST',
@@ -394,7 +414,7 @@ const submitFormSub = async () => {
 
     if (res.ok) {
       statusSub.value = 'success'
-      formSub.value = { email: '' }
+      formSub.value = { email: '', privacy: false }
     } else {
       statusSub.value = 'error'
     }
