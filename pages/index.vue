@@ -200,7 +200,7 @@ Startujeme letos na podzim.
     </div>
 
 
-    <div class="min-w-[320px] max-w-[361px] sm:max-w-[670px] mx-auto my-30">
+    <div id="contact" class="min-w-[320px] max-w-[361px] sm:max-w-[670px] mx-auto my-30">
       <div class="grid grid-cols-3 pb-14">
         <div class="col-span-1 flex justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28" fill="none">

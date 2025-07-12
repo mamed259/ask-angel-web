@@ -19,6 +19,16 @@
   --breakpoint-4xl: 2560px;
 }
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add scroll padding to account for navbar height */
+html {
+  scroll-padding-top: 100px;
+}
+
 
 /* Custom font definitions - Larken font family */
 

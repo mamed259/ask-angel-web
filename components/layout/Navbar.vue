@@ -22,9 +22,9 @@
         <!-- Contact Button -->
         <div class="relative flex-shrink-0 ms-auto">
             <!-- Desktop Contact Button -->
-            <NuxtLink to="/contact" class="hidden lg:inline-block bg-secondary cursor-pointer font-sans font-bold uppercase text-primary px-8 py-4 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <a href="#contact" class="hidden lg:inline-block bg-secondary cursor-pointer font-sans font-bold uppercase text-primary px-8 py-4 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
               {{ $t('navbar.contact').toUpperCase() }}
-            </NuxtLink>
+            </a>
             
             <!-- Mobile Menu Button -->
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden bg-secondary cursor-pointer font-sans font-bold uppercase text-primary px-8 py-3 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
