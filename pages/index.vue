@@ -1,58 +1,27 @@
 <template>
   <section>
     <Hero />
-    <Slider :content="[
-  {
-    title: 'Personalized Health, Rooted in Science',
-    perex: 'Because your body—and your journey—are uniquely yours. Health is never one-size-fits-all. It’s deeply personal, shaped by how you eat, move, sleep, manage stress, and connect with others.',
-    image: '/images/circle-chart.png',
-    author: {
-      name: 'Jacob Smith',
-      text: 'Works a demanding job and wants to manage stress better',
-      image: '/images/author-badge.png',
-    }
-  },
-  {
-    title: 'Stress Health, Natural Growth',
-    perex: 'Because your body—and your journey—are uniquely yours. Health is never one-size-fits-all. It’s deeply personal, shaped by how you eat, move, sleep, manage stress, and connect with others.',
-    image: '/images/circle-chart-2.png',
-    author: {
-      name: 'Sarah Johanson',
-      text: 'Works a demanding job and wants to manage stress better',
-      image: '/images/author-badge.png',
-    }
-  },
-  {
-    title: 'Inner Peace, Meditation and Mindfulness Satisfactory',
-    perex: 'Because your body—and your journey—are uniquely yours. Health is never one-size-fits-all. It’s deeply personal, shaped by how you eat, move, sleep, manage stress, and connect with others.',
-    image: '/images/circle-chart-3.png',
-    author: {
-      name: 'Megan Porter',
-      text: 'Works a demanding job and wants to manage stress better',
-      image: '/images/author-badge.png',
-    }
-  }
-    ]" />
+    <Slider :content="sliderContent" />
     <QuoteBlock
     :quote="quoteContent.quote"
     :author="quoteContent.author"
     />
     <Card :cardContent="[
       {
-        title: 'Achieve healthier lifestyle in a fun way',
-        perex: 'Our interactive quests are designed to fit your lifestyle and help you create lasting, meaningful change — one step at a time.',
+        title: locale === 'cs' ? 'Začni žít zdravěji – a s radostí' : 'Achieve healthier lifestyle in a fun way',
+        perex: locale === 'cs' ? 'Interaktivní a zábavné výzvy tě provedou malými změnami životního stylu s velkým dopadem. Krok za krokem, bez tlaku. Tak, aby to fungovalo dlouhodobě.' : 'Our interactive quests are designed to fit your lifestyle and help you create lasting, meaningful change — one step at a time.',
         image: '/images/card-1.png',
         bgColor: '#FFD5A6',
     },
     {
-        title: 'Smart Predictions for Better Choices',
-        perex: 'With help of AI, we predict short-term recovery tips and long-term health risks based on your data.',
+        title: locale === 'cs' ? 'Chytré předpovědi, lepší rozhodnutí' : 'Smart Predictions for Better Choices',
+        perex: locale === 'cs' ? 'Díky AI umíme předpovídat krátkodobé tipy na regeneraci i dlouhodobá zdravotní rizika – podle tvých dat.' : 'With help of AI, we predict short-term recovery tips and long-term health risks based on your data.',
         image: '/images/card-2.png',
         bgColor: '#E3D899',
     },
     {
-        title: 'Your Coach at Your Disposal 24/7',
-        perex: 'Your AI Angel is your personal guide—ready 24/7 to support your health journey and help you navigate your quests.',
+        title: locale === 'cs' ? 'Kouč, který je tu pro tebe 24/7' : 'Your Coach at Your Disposal 24/7',
+        perex: locale === 'cs' ? 'Tvůj osobní průvodce – připravený tě podpořit kdykoli budeš potřebovat. Pomůže ti na tvé cestě ke zdraví a nasměruje tě v každé výzvě. Zajímá tě cokoliv o tvém zdraví? Zeptej se. ' : 'Your AI Angel is your personal guide—ready 24/7 to support your health journey and help you navigate your quests.',
         image: '/images/card-3.png',
         bgColor: '#99BFE3',
     },
@@ -282,23 +251,26 @@ import Heading from "~/components/Heading.vue"
 import { ref } from 'vue'
 import motivationImg from '@/assets/icons/motivation.png'
 import healthDataImg from '@/assets/icons/health-data.png'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 
 const currentCardIndex = ref(0)
 
 const predictionCards = [
   {
     id: 1,
-    title: 'Smart Predictions for Better Choices',
-    subtitle: 'AI-driven predictions for short-term recovery and long-term health resilience.',
+    title: locale.value === 'cs' ? 'Predikce, které ti pomohou správně se rozhodovat' : 'Smart Predictions for Better Choices',
+    subtitle: locale.value === 'cs' ? 'Umělá inteligence, která předvídá změny ve tvém zdraví. Analyzuje tvé tělesné signály i denní rytmus a pomáhá zachytit potíže dřív, než se stanou problémem.' : 'AI-driven predictions for short-term recovery and long-term health resilience.',
     bgColor: '#FFD5A6',
     buttonText: 'tell me more →',
     image: "/images/smart-1.png",
-    content: "Health isn't static—it's a dynamic interplay of sleep, stress, nutrition, activity, and mental state. Our predictive engine continuously analyzes your biometric trends, behavior patterns, and contextual data to anticipate shifts in your physical and mental well-being—before symptoms manifest."
+    content: locale.value === 'cs' ? "Zdraví není něco neměnného – je to neustálá souhra spánku, stresu, výživy, pohybu a psychické pohody. Náš prediktivní systém průběžně analyzuje tvé biometrické údaje které budeš chtít poskytnout, vzorce chování a data, aby dokázal včas odhalit změny ve tvé fyzické i duševní kondici – dřív, než se projeví jako příznaky. <br/><br/> " : "Health isn't static—it's a dynamic interplay of sleep, stress, nutrition, activity, and mental state. Our predictive engine continuously analyzes your biometric trends, behavior patterns, and contextual data to anticipate shifts in your physical and mental well-being—before symptoms manifest."
   },
   {
     id: 2,
-    title: 'Your Health Data for Better Decisions',
-    subtitle: 'We treat your personal health data with the highest level of security.',
+    title: locale.value === 'cs' ? 'Chytré předpovědi, lepší rozhodnutí' : 'Your Health Data for Better Decisions',
+    subtitle: locale.value === 'cs' ? 'Umělá inteligence, která předvídá změny ve tvém zdraví. Analyzuje tvé tělesné signály i denní rytmus a pomáhá zachytit potíže dřív, než se stanou problémem.' : 'We treat your personal health data with the highest level of security.',
     bgColor: '#E3D899',
     buttonText: 'discover insights →',
     image: "/images/smart-2.png",
@@ -364,45 +336,12 @@ const rewards = [
 ]
 
 const quoteContent = {
-  quote: "Health is outcome of many factors. We're the first app to unify all its drivers into one intelligent system—for lasting, evidence-based change.",
+  quote: locale.value === 'cs' ? 'Můžete lidem říct, co mají dělat, a dokonce je naučit, jak to dělat – ale bez vedení a podpory si tyto znalosti a postupy nepřenesou do skutečné, trvalé změny.' : "Health is outcome of many factors. We're the first app to unify all its drivers into one intelligent system—for lasting, evidence-based change.",
   author: {
-    name: "Dr. Eric Placeholder",
+    name: locale.value === 'cs' ? 'Dr. Jessica Matthews, <br/> DBH, NBCHWC, DipACLM, FACLM' : "Dr. Eric Placeholder",
     image: "/images/quote-person.png",
   },
 }
-
-// TODO: Add formspree form @mamed259
-
-// const form = document.getElementById("my-form") as HTMLFormElement
-  
-//   async function handleSubmit(event: Event) {
-//     event.preventDefault()
-//     const status = document.getElementById("my-form-status") as HTMLDivElement
-//     const data = new FormData(event.target as HTMLFormElement)
-//     fetch((event.target as HTMLFormElement).action, {
-//       method: (event.target as HTMLFormElement).method,
-//       body: data,
-//       headers: {
-//           'Accept': 'application/json'
-//       }
-//     }).then(response => {
-//       if (response.ok) {
-//         status.innerHTML = "Thanks for your submission!"
-//         form.reset()
-//       } else {
-//         response.json().then(data => {
-//           if (Object.hasOwn(data, 'errors')) {
-//             status.innerHTML = data["errors"].map((error: { message: string }) => error["message"]).join(", ")
-//           } else {
-//             status.innerHTML = "Oops! There was a problem submitting your form"
-//           }
-//         })
-//       }
-//     }).catch(error => {
-//       status.innerHTML = "Oops! There was a problem submitting your form"
-//     })
-//   }
-//   form?.addEventListener("submit", handleSubmit)
 
 const form = ref({
   name: '',
@@ -414,15 +353,15 @@ const formSub = ref({
   email: '',
 })
 
-const status = ref('') // '', 'success', 'error'
-const statusSub = ref('') // '', 'success', 'error'
+const status = ref('')
+const statusSub = ref('')
 
 const submitForm = async () => {
   try {
     const formData = new FormData()
-    for (const key in form.value) {
-      formData.append(key, form.value[key])
-    }
+    formData.append('name', form.value.name)
+    formData.append('email', form.value.email)
+    formData.append('message', form.value.message)
 
     const res = await fetch('https://formspree.io/f/mblynypl', {
       method: 'POST',
@@ -430,7 +369,6 @@ const submitForm = async () => {
       body: formData
     })
 
-    const data = await res.json()
 
     if (res.ok) {
       status.value = 'success'
@@ -446,17 +384,13 @@ const submitForm = async () => {
 const submitFormSub = async () => {
   try {
     const formData = new FormData()
-    for (const key in formSub.value) {
-      formData.append(key, formSub.value[key])
-    }
+    formData.append('email', formSub.value.email)
 
     const res = await fetch('https://formspree.io/f/xqabryed', {
       method: 'POST',
       headers: { Accept: 'application/json' },
       body: formData
     })
-
-    const data = await res.json()
 
     if (res.ok) {
       statusSub.value = 'success'
@@ -468,5 +402,38 @@ const submitFormSub = async () => {
     statusSub.value = 'error'
   }
 }
+
+const sliderContent = [
+  {
+    title: locale.value === 'cs' ? 'Zdraví na míru. Podložené vědou.' : 'Personalized Health, Rooted in Science',
+    perex: locale.value === 'cs' ? 'Tvoje tělo je jedinečné – stejně jako tvoje cesta ke zdraví. Neexistuje univerzální recept, protože zdraví je hluboce osobní. Ovlivňuje ho to, co jíš, jak se hýbeš, spíš, zvládáš stres i jaké máš vztahy. <br/> <br/> Naše aplikace proto staví na principech medicíny životního stylu – vědecky ověřeného přístupu, který chápe zdraví jako propojený systém, ne izolované symptomy.' : 'Because your body—and your journey—are uniquely yours. Health is never one-size-fits-all. It’s deeply personal, shaped by how you eat, move, sleep, manage stress, and connect with others.',
+    image: '/images/circle-chart.png',
+    author: {
+      name: locale.value === 'cs' ? 'Kristýna Dvořáková' : 'Jacob Smith',
+      text: locale.value === 'cs' ? 'Má náročnou práci, chce lépe zvládat stres.' : 'Works a demanding job and wants to manage stress better',
+      image: '/images/author-badge.png',
+    }
+  },
+  {
+    title: 'Stress Health, Natural Growth',
+    perex: 'Because your body—and your journey—are uniquely yours. Health is never one-size-fits-all. It’s deeply personal, shaped by how you eat, move, sleep, manage stress, and connect with others.',
+    image: '/images/circle-chart-2.png',
+    author: {
+      name: locale.value === 'cs' ? 'Jana Nováková' : 'Sarah Johanson',
+      text: 'Works a demanding job and wants to manage stress better',
+      image: '/images/author-badge.png',
+    }
+  },
+  {
+    title: 'Inner Peace, Meditation and Mindfulness Satisfactory',
+    perex: 'Because your body—and your journey—are uniquely yours. Health is never one-size-fits-all. It’s deeply personal, shaped by how you eat, move, sleep, manage stress, and connect with others.',
+    image: '/images/circle-chart-3.png',
+    author: {
+      name: 'Megan Porter',
+      text: 'Works a demanding job and wants to manage stress better',
+      image: '/images/author-badge.png',
+    }
+  }
+    ]
 
 </script> 

@@ -7,9 +7,9 @@
     ]"
   >
     <img :src="author.image" width="64" height="64" alt="Author Badge" class="w-[64px] h-[64px]" />
-    <div class="flex flex-col items-start justify-center max-w-[212px] gap-y-0.5">
+    <div class="flex flex-col items-start justify-center gap-y-0.5">
       <p class="text-sm lg:text-base font-primary font-sans uppercase font-semibold">
-        {{ author.name }}
+        <span v-html="author.name" />
       </p>
       <span v-if="type === 'author'" 
       class="text-sm lg:text-base text-primary font-sans font-light leading-4.5 tracking-tight text-start" 
